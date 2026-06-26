@@ -261,3 +261,13 @@ export const techStack = [
   { name: "React Native",  module: 6, color: "#61dafb", dark: true },
   { name: "Expo",          module: 6, color: "#000020" },
 ];
+
+// Single source of truth for module colors — import this everywhere
+export const modColors = [
+  { accent: "#E24B4A", light: "#FCEBEB", darkLight: "rgba(226,75,74,0.12)" },
+  { accent: "#d97706", light: "#fffbeb", darkLight: "rgba(217,119,6,0.12)" },
+  { accent: "#0891b2", light: "#ecfeff", darkLight: "rgba(8,145,178,0.12)" },
+  { accent: "#16a34a", light: "#dcfce7", darkLight: "rgba(22,163,74,0.12)" },
+  { accent: "#7c3aed", light: "#f5f3ff", darkLight: "rgba(124,58,237,0.12)" },
+  { accent: "#059669", light: "#d1fae5", darkLight: "rgba(5,150,105,0.12)" },
+];

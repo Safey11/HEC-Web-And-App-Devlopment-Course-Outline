@@ -1,25 +1,29 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import ScrollObserver from "./components/ScrollObserver";
 
 export const metadata = {
-  title: "WebCraft Academy",
-  description: "From zero to Full-Stack + AI Developer — one weekend at a time.",
+  title: "WebCraft Academy — Full-Stack + AI Developer Course",
+  description: "From zero to Full-Stack + AI Developer. Based on Sir Ghous Ahmed's SMIT curriculum. Weekends only, Karachi.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         <Navbar />
+        <ScrollObserver />
         <main>{children}</main>
-        <footer style={{ borderTop: "0.5px solid var(--border)", marginTop: 80, padding: "32px 24px", textAlign: "center" }}>
-          <p style={{ fontSize: 13, color: "var(--text-faint)" }}>
-            © 2026 WebCraft Academy · Karachi, Pakistan · Weekends Only
-          </p>
-          <p style={{ fontSize: 12, color: "var(--text-faint)", marginTop: 4 }}>
-            Core curriculum based on Sir Ghous Ahmed's SMIT outline
-          </p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
