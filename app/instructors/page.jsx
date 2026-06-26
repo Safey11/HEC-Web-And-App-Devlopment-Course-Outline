@@ -39,9 +39,9 @@ export default function InstructorsPage() {
 
               <div>
                 <div style={{ fontSize: "clamp(20px,3.5vw,26px)", fontWeight: 800, color: "var(--text)", letterSpacing: "-0.025em", marginBottom: 4 }}>Hafiz Zeeshan</div>
-                <div style={{ fontSize: 13, color: "var(--accent)", fontWeight: 600, marginBottom: 18 }}>Lead & Head Instructor · WebCraft Academy</div>
+                <div style={{ fontSize: 13, color: "var(--accent)", fontWeight: 600, marginBottom: 18 }}>Lead & Head Instructor · HEC Academy</div>
                 <p style={{ fontSize: 14, color: "var(--text-muted)", lineHeight: 1.85, marginBottom: 22 }}>
-                  The visionary behind WebCraft Academy. Designed the entire curriculum with one goal — making students genuinely market-ready. Leads overall strategy, mentors both instructors, oversees student progress, and personally reviews all final projects and Hackathon submissions.
+                  The visionary behind HEC Academy. Designed the entire curriculum with one goal — making students genuinely market-ready. Leads overall strategy, mentors both instructors, oversees student progress, and personally reviews all final projects and Hackathon submissions.
                 </p>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 10 }}>
                   {["Course direction & strategy", "Advanced concept sessions", "Career & freelance mentorship", "Hackathon judging & reviews"].map((t, i) => (
@@ -72,7 +72,7 @@ export default function InstructorsPage() {
               </div>
 
               <p style={{ fontSize: 13.5, color: "var(--text-muted)", lineHeight: 1.85, marginBottom: 20 }}>
-                Hands-on full-stack developer and co-creator of WebCraft Academy. Leads the frontend, React, Next.js, and Agentic AI modules. Known for making complex topics click through live coding and real projects.
+                Hands-on full-stack developer and co-creator of HEC Academy. Leads the frontend, React, Next.js, and Agentic AI modules. Known for making complex topics click through live coding and real projects.
               </p>
 
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 20 }}>
@@ -137,7 +137,7 @@ export default function InstructorsPage() {
             <div>
               <div style={{ fontWeight: 700, fontSize: 14, color: "var(--credit-text)", marginBottom: 5 }}>Built on Sir Ghous Ahmed's SMIT Curriculum</div>
               <p style={{ fontSize: 13, color: "var(--credit-text)", lineHeight: 1.8, margin: 0, opacity: 0.85 }}>
-                The core curriculum at WebCraft Academy is based on the proven outline developed by Sir Ghous Ahmed at SMIT — one of Pakistan's most respected free tech education programs. We have extended it with Agentic AI to align with 2026 market demands.
+                The core curriculum at HEC Academy is based on the proven outline developed by Sir Ghous Ahmed at SMIT — one of Pakistan's most respected free tech education programs. We have extended it with Agentic AI to align with 2026 market demands.
               </p>
             </div>
           </div>

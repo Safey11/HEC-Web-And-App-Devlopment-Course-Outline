@@ -1,5 +1,5 @@
 export const courseInfo = {
-  name: "WebCraft Academy",
+  name: "HEC Academy",
   tagline: "From zero to Full-Stack + AI Developer — one weekend at a time.",
   schedule: "Weekends only · Sat & Sun",
   sessionLength: "2–3 hours per session",
@@ -10,7 +10,7 @@ export const courseInfo = {
 export const instructors = [
   {
     initials: "HZ", name: "Hafiz Zeeshan", role: "Head Instructor & Lead",
-    bio: "The visionary behind WebCraft Academy. Leads overall curriculum, mentors instructors, and ensures every student leaves market-ready.",
+    bio: "The visionary behind HEC Academy. Leads overall curriculum, mentors instructors, and ensures every student leaves market-ready.",
     teaches: ["Course direction & strategy", "Advanced concept sessions", "Career & freelance mentorship", "Final project reviews"],
     accent: "var(--accent)", light: "var(--accent-light)",
   },

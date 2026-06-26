@@ -97,7 +97,7 @@ export default function Home() {
                 {["#ff5f57","#febc2e","#28c840"].map((c, i) => (
                   <div key={i} style={{ width: 11, height: 11, borderRadius: "50%", background: c }} />
                 ))}
-                <span style={{ marginLeft: 8, fontSize: 11, color: "#484f58", fontFamily: "var(--font-sans)" }}>webcraft.js</span>
+                <span style={{ marginLeft: 8, fontSize: 11, color: "#484f58", fontFamily: "var(--font-sans)" }}>HEC.js</span>
               </div>
 
               <div className="code-line"><span style={{ color: "#6e7681" }}>// 📅 Week 1 — Your first line of code</span></div>
@@ -144,11 +144,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── WHY WEBCRAFT — alt bg ── */}
+      {/* ── WHY HEC — alt bg ── */}
       <section style={{ background: "var(--bg-alt)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "clamp(56px,7vw,88px) 24px" }}>
           <div className="fade-up" style={{ marginBottom: 44 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: "var(--accent)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 10 }}>Why WebCraft Academy</div>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "var(--accent)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 10 }}>Why HEC Academy</div>
             <h2 style={{ fontSize: "clamp(26px,4vw,38px)", fontWeight: 800, letterSpacing: "-0.03em", color: "var(--text)", marginBottom: 10 }}>Not just another bootcamp.</h2>
             <p style={{ color: "var(--text-muted)", fontSize: 16, maxWidth: 480, lineHeight: 1.7 }}>Six reasons students choose us over YouTube and other weekend courses.</p>
           </div>

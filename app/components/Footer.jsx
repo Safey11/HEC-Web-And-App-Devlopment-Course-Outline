@@ -17,7 +17,7 @@ export default function Footer() {
                 <BookOpen size={16} color="#fff" />
               </div>
               <span style={{ fontWeight: 800, fontSize: 15, color: "var(--text)", letterSpacing: "-0.02em" }}>
-                WebCraft <span style={{ color: "var(--accent)" }}>Academy</span>
+                HEC <span style={{ color: "var(--accent)" }}>Academy</span>
               </span>
             </div>
             <p style={{ fontSize: 13, color: "var(--text-muted)", lineHeight: 1.75, marginBottom: 18 }}>
@@ -60,17 +60,17 @@ export default function Footer() {
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--text-faint)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 14 }}>Contact</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <a href="mailto:info@webcraftacademy.pk" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--text-muted)", textDecoration: "none", transition: "color 0.15s" }}
+              <a href="mailto:info@HEC.pk" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--text-muted)", textDecoration: "none", transition: "color 0.15s" }}
                 onMouseOver={e => e.currentTarget.style.color = "var(--accent)"}
                 onMouseOut={e => e.currentTarget.style.color = "var(--text-muted)"}>
-                <Mail size={14} /> info@webcraftacademy.pk
+                <Mail size={14} /> info@HEC.pk
               </a>
-              <a href="https://wa.me/923000000000" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--text-muted)", textDecoration: "none", transition: "color 0.15s" }}
+              <a href="https://github.com/Safey11" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--text-muted)", textDecoration: "none", transition: "color 0.15s" }}
                 onMouseOver={e => e.currentTarget.style.color = "#25D366"}
                 onMouseOut={e => e.currentTarget.style.color = "var(--text-muted)"}>
                 <MessageCircle size={14} /> WhatsApp us
               </a>
-              <a href="https://github.com/webcraftacademy" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--text-muted)", textDecoration: "none", transition: "color 0.15s" }}
+              <a href="https://github.com/Safey11" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--text-muted)", textDecoration: "none", transition: "color 0.15s" }}
                 onMouseOver={e => e.currentTarget.style.color = "var(--text)"}
                 onMouseOut={e => e.currentTarget.style.color = "var(--text-muted)"}>
                 <GitBranch size={14} /> GitHub
@@ -101,7 +101,7 @@ export default function Footer() {
         {/* Divider */}
         <div style={{ borderTop: "0.5px solid var(--border)", paddingTop: 24, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
           <p style={{ fontSize: 12, color: "var(--text-faint)" }}>
-            © 2026 WebCraft Academy · Karachi, Pakistan
+            © 2026 HEC Academy · Karachi, Pakistan
           </p>
           {/* Sir Ghous credit */}
           <div style={{ display: "flex", alignItems: "center", gap: 6, padding: "5px 12px", background: "#fffbeb", border: "0.5px solid #fcd34d", borderRadius: 99 }}>

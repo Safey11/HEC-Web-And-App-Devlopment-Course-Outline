@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import ScrollObserver from "./components/ScrollObserver";
 
 export const metadata = {
-  title: "WebCraft Academy — Full-Stack + AI Developer Course",
+  title: "HEC Academy — Full-Stack + AI Developer Course",
   description: "From zero to Full-Stack + AI Developer. Based on Sir Ghous Ahmed's SMIT curriculum. Weekends only, Karachi.",
 };
 

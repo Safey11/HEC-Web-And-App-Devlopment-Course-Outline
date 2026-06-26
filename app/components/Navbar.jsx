@@ -77,7 +77,7 @@ export default function Navbar() {
               <BookOpen size={17} color="#fff" />
             </div>
             <span style={{ fontWeight: 800, fontSize: 15, color: "var(--text)", letterSpacing: "-0.02em" }}>
-              WebCraft <span style={{ color: "var(--accent)" }}>Academy</span>
+              HEC <span style={{ color: "var(--accent)" }}>Academy</span>
             </span>
           </Link>
 
