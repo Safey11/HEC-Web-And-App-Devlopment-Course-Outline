@@ -13,43 +13,30 @@ const links = [
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
-  const [open, setOpen]       = useState(false);
+  const pathname  = usePathname();
+  const [open,     setOpen]     = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [dark, setDark]       = useState(false);
+  const [dark,     setDark]     = useState(false);
 
-  // Detect mobile
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth <= 700);
+    const check = () => setIsMobile(window.innerWidth <= 768);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
   }, []);
 
-  // Restore saved theme on first load
   useEffect(() => {
     const saved = localStorage.getItem("wca-theme");
-    if (saved === "dark") {
-      document.documentElement.setAttribute("data-theme", "dark");
-      setDark(true);
-    } else if (saved === "light") {
-      document.documentElement.setAttribute("data-theme", "light");
-      setDark(false);
-    } else {
-      // Default to system preference
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setDark(prefersDark);
+    if (saved === "dark") { document.documentElement.setAttribute("data-theme","dark"); setDark(true); }
+    else if (saved === "light") { document.documentElement.setAttribute("data-theme","light"); setDark(false); }
+    else {
+      const sys = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setDark(sys);
     }
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => { setOpen(false); }, [pathname]);
-
-  // Lock scroll when mobile menu open
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [open]);
+  useEffect(() => { document.body.style.overflow = open ? "hidden" : ""; return () => { document.body.style.overflow = ""; }; }, [open]);
 
   const toggleTheme = () => {
     const next = !dark;
@@ -58,103 +45,110 @@ export default function Navbar() {
     localStorage.setItem("wca-theme", next ? "dark" : "light");
   };
 
-  const navBg = dark
-    ? "rgba(15,15,14,0.95)"
-    : "rgba(255,255,255,0.95)";
-
-  const mobileMenuBg = dark
-    ? "rgba(15,15,14,0.98)"
-    : "rgba(255,255,255,0.98)";
-
   return (
     <>
-      <nav style={{ position: "sticky", top: 0, zIndex: 50, background: navBg, backdropFilter: "blur(16px)", borderBottom: "0.5px solid var(--border)" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "0 20px", height: 60, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <nav style={{
+        position: "sticky", top: 0, zIndex: 50,
+        background: "rgba(255,255,255,0.92)",
+        backdropFilter: "blur(20px)",
+        borderBottom: "1px solid var(--border)",
+        boxShadow: "0 1px 0 rgba(15,23,42,0.04)",
+      }}
+      className="dark-nav">
+        <style>{`
+          [data-theme="dark"] .dark-nav {
+            background: rgba(10,15,30,0.92) !important;
+          }
+        `}</style>
+
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", height: 64, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 
           {/* Logo */}
           <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", flexShrink: 0 }}>
-            <div style={{ width: 34, height: 34, borderRadius: "var(--radius-sm)", background: "var(--accent)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <BookOpen size={17} color="#fff" />
+            <div style={{ width: 32, height: 32, borderRadius: "var(--radius-md)", background: "var(--accent)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 6px rgba(56,189,248,0.3)" }}>
+              <BookOpen size={16} color="#fff" />
             </div>
-            <span style={{ fontWeight: 800, fontSize: 15, color: "var(--text)", letterSpacing: "-0.02em" }}>
-              HEC <span style={{ color: "var(--accent)" }}>Academy</span>
+            <span style={{ fontWeight: 800, fontSize: 15, color: "var(--text)", letterSpacing: "-0.025em" }}>
+              WebCraft <span style={{ color: "var(--accent)" }}>Academy</span>
             </span>
           </Link>
 
-          {/* Desktop links + theme toggle */}
+          {/* Desktop nav */}
           {!isMobile && (
-            <div style={{ display: "flex", alignItems: "center", gap: 2 }}>
-              {links.map(l => (
-                <Link key={l.href} href={l.href} style={{
-                  padding: "6px 13px", borderRadius: "var(--radius-sm)",
-                  fontSize: 13, fontWeight: 500, textDecoration: "none",
-                  color: pathname === l.href ? "var(--accent)" : "var(--text-muted)",
-                  background: pathname === l.href ? "var(--accent-light)" : "transparent",
-                  transition: "all 0.15s",
-                }}>
-                  {l.label}
-                </Link>
-              ))}
+            <div style={{ display: "flex", alignItems: "center", gap: 1 }}>
+              {links.map(l => {
+                const active = pathname === l.href;
+                return (
+                  <Link key={l.href} href={l.href} style={{
+                    padding: "6px 14px", borderRadius: "var(--radius-md)",
+                    fontSize: 13.5, fontWeight: active ? 600 : 500, textDecoration: "none",
+                    color: active ? "var(--accent)" : "var(--text-muted)",
+                    background: active ? "var(--accent-light)" : "transparent",
+                    letterSpacing: "-0.01em",
+                    transition: "background 0.15s, color 0.15s",
+                  }}>
+                    {l.label}
+                  </Link>
+                );
+              })}
+
+              {/* Divider */}
+              <div style={{ width: 1, height: 18, background: "var(--border-strong)", margin: "0 8px" }} />
 
               {/* Theme toggle */}
-              <button
-                onClick={toggleTheme}
-                title={dark ? "Switch to light mode" : "Switch to dark mode"}
-                style={{
-                  marginLeft: 8,
-                  width: 34, height: 34,
-                  borderRadius: "var(--radius-sm)",
-                  border: "0.5px solid var(--border)",
-                  background: "var(--bg-secondary)",
-                  cursor: "pointer",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "var(--text-muted)",
-                  transition: "background 0.15s, color 0.15s",
-                }}
-                onMouseOver={e => { e.currentTarget.style.background = "var(--bg-tertiary)"; e.currentTarget.style.color = "var(--text)"; }}
-                onMouseOut={e => { e.currentTarget.style.background = "var(--bg-secondary)"; e.currentTarget.style.color = "var(--text-muted)"; }}
+              <button onClick={toggleTheme} title={dark ? "Light mode" : "Dark mode"} style={{
+                width: 34, height: 34, borderRadius: "var(--radius-md)",
+                border: "1px solid var(--border)", background: "var(--bg-secondary)",
+                cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+                color: "var(--text-muted)", transition: "all 0.15s",
+              }}
+              onMouseOver={e => { e.currentTarget.style.background = "var(--bg-tertiary)"; e.currentTarget.style.color = "var(--text)"; }}
+              onMouseOut={e => { e.currentTarget.style.background = "var(--bg-secondary)"; e.currentTarget.style.color = "var(--text-muted)"; }}
               >
                 {dark ? <Sun size={15} /> : <Moon size={15} />}
               </button>
             </div>
           )}
 
-          {/* Mobile: theme toggle + hamburger */}
+          {/* Mobile controls */}
           {isMobile && (
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <button
-                onClick={toggleTheme}
-                title={dark ? "Light mode" : "Dark mode"}
-                style={{ width: 34, height: 34, borderRadius: "var(--radius-sm)", border: "0.5px solid var(--border)", background: "var(--bg-secondary)", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)" }}
-              >
+              <button onClick={toggleTheme} style={{ width: 34, height: 34, borderRadius: "var(--radius-md)", border: "1px solid var(--border)", background: "var(--bg-secondary)", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)" }}>
                 {dark ? <Sun size={15} /> : <Moon size={15} />}
               </button>
-              <button
-                onClick={() => setOpen(o => !o)}
-                style={{ border: "none", background: "none", cursor: "pointer", padding: 6, color: "var(--text)", display: "flex", alignItems: "center" }}
-                aria-label="Toggle menu"
-              >
-                {open ? <X size={22} /> : <Menu size={22} />}
+              <button onClick={() => setOpen(o => !o)} style={{ width: 34, height: 34, borderRadius: "var(--radius-md)", border: "1px solid var(--border)", background: "var(--bg-secondary)", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text)" }}>
+                {open ? <X size={18} /> : <Menu size={18} />}
               </button>
             </div>
           )}
         </div>
       </nav>
 
-      {/* Mobile dropdown */}
+      {/* Mobile menu */}
       {isMobile && open && (
         <>
-          <div style={{ display: "flex", flexDirection: "column", gap: 4, position: "fixed", top: 60, left: 0, right: 0, background: mobileMenuBg, backdropFilter: "blur(16px)", padding: "16px 20px 24px", borderBottom: "0.5px solid var(--border)", zIndex: 49 }}>
-            {links.map(l => (
-              <Link key={l.href} href={l.href} style={{ padding: "14px 16px", borderRadius: "var(--radius-md)", fontSize: 16, fontWeight: 600, textDecoration: "none", color: pathname === l.href ? "var(--accent)" : "var(--text)", background: pathname === l.href ? "var(--accent-light)" : "transparent", borderBottom: "0.5px solid var(--border)" }}>
-                {l.label}
-              </Link>
-            ))}
-            <div style={{ marginTop: 12, padding: "12px 16px", background: "var(--accent-light)", borderRadius: "var(--radius-md)", textAlign: "center" }}>
-              <span style={{ fontSize: 13, color: "var(--accent-dark)", fontWeight: 500 }}>🗓 First session: Saturday, April 5th</span>
+          <div style={{ position: "fixed", top: 64, left: 0, right: 0, zIndex: 49, background: "var(--bg)", borderBottom: "1px solid var(--border)", padding: "12px 20px 20px", boxShadow: "var(--shadow-lg)" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              {links.map(l => {
+                const active = pathname === l.href;
+                return (
+                  <Link key={l.href} href={l.href} style={{
+                    padding: "12px 16px", borderRadius: "var(--radius-lg)",
+                    fontSize: 15, fontWeight: active ? 700 : 500, textDecoration: "none",
+                    color: active ? "var(--accent)" : "var(--text)",
+                    background: active ? "var(--accent-light)" : "transparent",
+                    letterSpacing: "-0.01em",
+                  }}>
+                    {l.label}
+                  </Link>
+                );
+              })}
+            </div>
+            <div style={{ marginTop: 16, padding: "12px 16px", background: "var(--accent-light)", borderRadius: "var(--radius-lg)", textAlign: "center", border: "1px solid rgba(56,189,248,0.15)" }}>
+              <span style={{ fontSize: 13, color: "var(--accent-dark)", fontWeight: 600 }}>🗓 First session: Saturday, April 5th</span>
             </div>
           </div>
-          <div onClick={() => setOpen(false)} style={{ position: "fixed", inset: 0, zIndex: 48, background: "rgba(0,0,0,0.25)", backdropFilter: "blur(2px)" }} />
+          <div onClick={() => setOpen(false)} style={{ position: "fixed", inset: 0, zIndex: 48, background: "rgba(15,23,42,0.3)", backdropFilter: "blur(4px)" }} />
         </>
       )}
     </>
