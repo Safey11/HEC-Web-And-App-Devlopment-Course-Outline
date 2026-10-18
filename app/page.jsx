@@ -9,15 +9,15 @@ const faqs = [
   { q: "Do I need to buy a laptop?", a: "Yes, you need a personal laptop. Any Windows or Mac laptop from the last 5 years works fine. We will help you set everything up on day one." },
   { q: "What if I miss a weekend session?", a: "Every session is recorded and shared in the student WhatsApp group the same day. You won't fall behind as long as you watch the recording before the next session." },
   { q: "Is the course online or in-person?", a: "In-person at our centre in Karachi every Saturday and Sunday. Being physically present makes a huge difference — especially for the hands-on coding sessions." },
-  { q: "Will I get a certificate?", a: "Yes — a certificate after each module Hackathon. By the end you will have 6 certificates plus 6 live deployed projects to show employers or freelance clients." },
-  { q: "How much does it cost?", a: "Message us on WhatsApp for current fee details. We offer installment plans and keep pricing as accessible as possible — our goal is your career, not profit." },
-  { q: "Can I get a job or freelance after this?", a: "That is the entire goal. The curriculum is built on Sir Ghous Ahmed's SMIT outline which has produced hundreds of employed developers in Pakistan. We added Agentic AI to make you even more hireable in 2026." },
+  { q: "Will I get a certificate?", a: "Yes — you get a certificate on completion of the course, plus 6 live deployed Hackathon projects to show employers or freelance clients." },
+  { q: "How much does it cost?", a: "Registration fee is Rs. 1,000 (one time) and the monthly fee is Rs. 2,000. Message us on WhatsApp if you have any questions about fees — we keep pricing as accessible as possible because our goal is your career, not profit." },
+  { q: "Can I get a job or freelance after this?", a: "That is the entire goal. The curriculum is built on Sir Ghous Ahmed's SMIT outline which has produced hundreds of employed developers in Pakistan. We added a dedicated AI Integration module to make you even more hireable in 2026." },
 ];
 
 const whyPoints = [
   { icon: <Award size={20}/>, title: "Battle-tested curriculum", body: "Built on Sir Ghous Ahmed's SMIT outline — the same syllabus that produced hundreds of employed developers across Pakistan.", color: "#38bdf8" },
-  { icon: <Bot size={20}/>,   title: "Agentic AI included",    body: "The only weekend bootcamp in Karachi teaching LangChain, LangGraph, and RAG alongside full MERN stack. Nobody else does this.", color: "#7c3aed" },
-  { icon: <Trophy size={20}/>,title: "6 real Hackathons",      body: "Every module ends with a Hackathon. You graduate with 6 deployed projects in your portfolio — not just course certificates.", color: "#d97706" },
+  { icon: <Bot size={20}/>,   title: "AI Integration included", body: "Learn to add real AI features — chatbots, summarizers, smart search — to your apps using Groq and OpenAI APIs, alongside the full MERN stack.", color: "#7c3aed" },
+  { icon: <Trophy size={20}/>,title: "6 real Hackathons",      body: "Every module ends with a Hackathon. You graduate with 6 deployed projects in your portfolio — not just a certificate.", color: "#d97706" },
   { icon: <Users size={20}/>, title: "3 active instructors",   body: "Hafiz Zeeshan, Saif, and Adnan — all active developers, not just teachers. They build real products and teach what actually gets you hired.", color: "#0891b2" },
   { icon: <Globe size={20}/>, title: "Freelance-ready skills", body: "GSAP, Stripe, Cloudinary, Supabase, deployment — tools Pakistani freelancers use on Upwork to earn $500–$2000 per project.", color: "#059669" },
   { icon: <Briefcase size={20}/>, title: "Job market aligned", body: "Every technology in this course appears in Pakistani and remote job listings right now. Nothing is taught just because it is trendy.", color: "#db2777" },
@@ -61,7 +61,7 @@ export default function Home() {
             </h1>
 
             <p className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(15px,1.8vw,17px)", color: "var(--text-muted)", maxWidth: 480, marginBottom: 12, lineHeight: 1.85, letterSpacing: "-0.005em" }}>
-              Master HTML, CSS, JavaScript, TypeScript, React, Next.js, Node.js, MongoDB — and <strong style={{ color: "var(--text)", fontWeight: 700 }}>Agentic AI with LangChain & LangGraph.</strong>
+              Master HTML, CSS, JavaScript, TypeScript, React, Next.js, Node.js, MongoDB — and <strong style={{ color: "var(--text)", fontWeight: 700 }}>AI Integration with Groq & OpenAI APIs.</strong>
             </p>
 
             <p className="fade-up fade-up-delay-2" style={{ fontSize: 13, color: "var(--text-faint)", maxWidth: 400, marginBottom: 36, lineHeight: 1.65 }}>
@@ -75,7 +75,7 @@ export default function Home() {
 
             {/* Mobile pill tags */}
             <div className="hero-mobile-tags">
-              {["HTML·CSS","JavaScript","TypeScript","React","Next.js","Node.js","MongoDB","LangChain"].map((t,i) => (
+              {["HTML·CSS","JavaScript","TypeScript","React","Next.js","Node.js","MongoDB","AI APIs"].map((t,i) => (
                 <span key={i} style={{ fontSize: 12, fontWeight: 600, padding: "5px 12px", borderRadius: 99, background: "var(--bg-secondary)", border: "1px solid var(--border)", color: "var(--text-muted)" }}>{t}</span>
               ))}
             </div>
@@ -97,7 +97,7 @@ export default function Home() {
               {/* Window chrome */}
               <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 18 }}>
                 {["#ff5f57","#febc2e","#28c840"].map((c,i) => <div key={i} style={{ width: 11, height: 11, borderRadius: "50%", background: c }} />)}
-                <span style={{ marginLeft: 8, fontSize: 11, color: "#475569", fontFamily: "var(--font-sans)", fontWeight: 500 }}>webcraft.js</span>
+                <span style={{ marginLeft: 8, fontSize: 11, color: "#475569", fontFamily: "var(--font-sans)", fontWeight: 500 }}>hec.js</span>
               </div>
 
               <div className="code-line"><span style={{ color: "#64748b" }}>// 📅 Week 1 — first line of code</span></div>
@@ -106,8 +106,8 @@ export default function Home() {
               <div className="code-line"><span style={{ color: "#c084fc" }}>export default function</span><span style={{ color: "#7dd3fc" }}> Portfolio</span><span style={{ color: "#f472b6" }}>{"() {"}</span></div>
               <div className="code-line"><span style={{ color: "#e2e8f0" }}>  return </span><span style={{ color: "#a3e635" }}>&lt;App isHired=</span><span style={{ color: "#7dd3fc" }}>{"{true}"}</span><span style={{ color: "#a3e635" }}>/&gt;</span></div>
               <div className="code-line"><span style={{ color: "#f472b6" }}>{"}"}</span></div>
-              <div className="code-line" style={{ marginTop: 8 }}><span style={{ color: "#64748b" }}>// 🤖 Module 5 — Agentic AI</span></div>
-              <div className="code-line"><span style={{ color: "#c084fc" }}>const</span><span style={{ color: "#e2e8f0" }}> agent </span><span style={{ color: "#f472b6" }}>=</span><span style={{ color: "#e2e8f0" }}> new </span><span style={{ color: "#7dd3fc" }}>LangGraph</span><span style={{ color: "#e2e8f0" }}>(config)</span></div>
+              <div className="code-line" style={{ marginTop: 8 }}><span style={{ color: "#64748b" }}>// 🤖 Module 5 — AI Integration</span></div>
+              <div className="code-line"><span style={{ color: "#c084fc" }}>const</span><span style={{ color: "#e2e8f0" }}> reply </span><span style={{ color: "#f472b6" }}>=</span><span style={{ color: "#e2e8f0" }}> await </span><span style={{ color: "#7dd3fc" }}>groq</span><span style={{ color: "#e2e8f0" }}>.chat(prompt)</span></div>
               <div style={{ marginTop: 14, paddingTop: 14, borderTop: "1px solid #1e293b", display: "flex", alignItems: "center", gap: 8 }}>
                 <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#22c55e" }} />
                 <span style={{ color: "#22c55e", fontSize: 12, fontFamily: "var(--font-sans)", fontWeight: 600 }}>Deployed · vercel.app</span>
@@ -126,7 +126,7 @@ export default function Home() {
             { icon: <Clock size={15}/>,    label: "Per session",value: "2–3 Hours" },
             { icon: <Code2 size={15}/>,    label: "Modules",    value: "6 Modules" },
             { icon: <Trophy size={15}/>,   label: "Hackathons", value: "6 Real" },
-            { icon: <Bot size={15}/>,      label: "Includes",   value: "Agentic AI" },
+            { icon: <Bot size={15}/>,      label: "Includes",   value: "AI Integration" },
             { icon: <Users size={15}/>,    label: "Goal",       value: "Job-Ready" },
           ].map((s,i) => (
             <div key={i} className="stat-card" style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -140,7 +140,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── WHY WEBCRAFT ── */}
+      {/* ── WHY HEC ── */}
       <section style={{ background: "var(--bg)" }}>
         <div style={{ maxWidth: W, margin: "0 auto", padding: "clamp(60px,8vw,96px) 24px" }}>
           <div className="fade-up" style={{ marginBottom: 48 }}>
@@ -222,21 +222,21 @@ export default function Home() {
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ display: "inline-flex", alignItems: "center", gap: 7, background: "rgba(124,58,237,0.18)", border: "1px solid rgba(124,58,237,0.3)", padding: "5px 12px", borderRadius: 99, marginBottom: 16 }}>
                 <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#a78bfa" }} />
-                <span style={{ fontSize: 11, fontWeight: 700, color: "#a78bfa", letterSpacing: "0.08em", textTransform: "uppercase" }}>Module 5 · New in 2026 · Only in Karachi</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: "#a78bfa", letterSpacing: "0.08em", textTransform: "uppercase" }}>Module 5 · AI Integration · 3 Weeks</span>
               </div>
-              <h2 style={{ fontSize: "clamp(22px,4vw,34px)", fontWeight: 800, color: "#f1f5f9", letterSpacing: "-0.03em", marginBottom: 14, lineHeight: 1.15 }}>🤖 Agentic AI Development</h2>
+              <h2 style={{ fontSize: "clamp(22px,4vw,34px)", fontWeight: 800, color: "#f1f5f9", letterSpacing: "-0.03em", marginBottom: 14, lineHeight: 1.15 }}>🤖 AI Integration for Web Apps</h2>
               <p style={{ color: "#64748b", fontSize: 15, lineHeight: 1.85, marginBottom: 24, maxWidth: 500 }}>
-                LangChain, LangGraph, RAG pipelines, vector databases, and MCP — wired into your full MERN stack. Build AI agents that don't just answer questions, they take real actions.
+                Add real AI features to your Next.js and Express apps — chatbots, summarizers, resume analyzers and AI-powered search — using Groq and OpenAI APIs with solid prompt engineering.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 28 }}>
-                {["Python","LangChain","LangGraph","RAG","Groq API","Vector DBs","MCP"].map((t,i) => (
+                {["Groq API","OpenAI API","Prompt Engineering","Next.js AI","Express AI"].map((t,i) => (
                   <span key={i} style={{ fontSize: 12, fontWeight: 600, padding: "5px 12px", borderRadius: 99, background: "rgba(124,58,237,0.12)", color: "#c4b5fd", border: "1px solid rgba(124,58,237,0.22)" }}>{t}</span>
                 ))}
               </div>
               <Link href="/outline" className="btn-ghost-white" style={{ fontSize: 13.5 }}>See Module 5 <ArrowRight size={14} /></Link>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10, flexShrink: 0 }}>
-              {[{val:"2",label:"Months",sub:"dedicated AI"},{val:"2",label:"Quizzes",sub:"LangChain + RAG"},{val:"1",label:"Hackathon",sub:"AI product"}].map((s,i) => (
+              {[{val:"3",label:"Weeks",sub:"dedicated AI"},{val:"1",label:"Quiz",sub:"AI Integration"},{val:"1",label:"Hackathon",sub:"AI-powered app"}].map((s,i) => (
                 <div key={i} style={{ textAlign: "center", padding: "16px 22px", background: "rgba(255,255,255,0.04)", borderRadius: "var(--radius-xl)", border: "1px solid rgba(255,255,255,0.07)" }}>
                   <div style={{ fontSize: 28, fontWeight: 800, color: "#c4b5fd", lineHeight: 1, letterSpacing: "-0.03em" }}>{s.val}</div>
                   <div style={{ fontSize: 12, fontWeight: 600, color: "rgba(255,255,255,0.5)", marginTop: 3 }}>{s.label}</div>
@@ -283,7 +283,7 @@ export default function Home() {
             <MessageCircle size={16} color="var(--accent)" />
             <span style={{ fontSize: 14, color: "var(--text-muted)" }}>
               Still have questions?{" "}
-              <a href="https://wa.me/923000000000" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 700, textDecoration: "none" }}>Message us on WhatsApp →</a>
+              <a href="https://wa.me/923092583515" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 700, textDecoration: "none" }}>Message us on WhatsApp →</a>
             </span>
           </div>
         </div>
@@ -304,7 +304,7 @@ export default function Home() {
               First session Saturday, April 5th. Limited seats. Join the WhatsApp group to secure your spot.
             </p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="https://wa.me/923000000000" target="_blank" rel="noopener noreferrer" className="btn-white">
+              <a href="https://wa.me/923092583515" target="_blank" rel="noopener noreferrer" className="btn-white">
                 <MessageCircle size={16} /> Join on WhatsApp
               </a>
               <Link href="/outline" className="btn-ghost-white">View Curriculum <ArrowRight size={15} /></Link>

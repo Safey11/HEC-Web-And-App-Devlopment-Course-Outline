@@ -3,7 +3,8 @@ import { modules, modColors } from "../data/course";
 import { Calendar, Trophy } from "lucide-react";
 
 const W = 960;
-const durations = [2.5, 4.5, 3, 4, 2, 2];
+// Months per module — keep in sync with course.js (Module 5 = 3 weeks, Module 6 = 1 month)
+const durations = [2.5, 4.5, 3, 4, 0.75, 1];
 const totalMonths = durations.reduce((a, b) => a + b, 0);
 
 export default function SchedulePage() {
@@ -14,7 +15,7 @@ export default function SchedulePage() {
         <div style={{ maxWidth: W, margin: "0 auto", padding: "clamp(44px,6vw,68px) 24px clamp(36px,5vw,52px)" }}>
           <div className="fade-up">
             <div className="divider" />
-            <h1 style={{ fontSize: "clamp(28px,5vw,46px)", fontWeight: 800, letterSpacing: "-0.035em", color: "var(--text)", marginBottom: 14, lineHeight: 1.08 }}>6 Modules · ~18 Months</h1>
+            <h1 style={{ fontSize: "clamp(28px,5vw,46px)", fontWeight: 800, letterSpacing: "-0.035em", color: "var(--text)", marginBottom: 14, lineHeight: 1.08 }}>6 Modules · ~{Math.round(totalMonths)} Months</h1>
             <p style={{ fontSize: 16, color: "var(--text-muted)", maxWidth: 480, lineHeight: 1.8 }}>
               Weekends only — Saturday & Sunday. Each session runs 2–3 hours. 6 Hackathons throughout the journey.
             </p>
@@ -32,7 +33,7 @@ export default function SchedulePage() {
             </div>
             <div style={{ display: "flex", borderRadius: "var(--radius-md)", overflow: "hidden", height: 10, gap: 2 }}>
               {modules.map((m, i) => (
-                <div key={m.id} title={`${m.name} — ${durations[i]} months`}
+                <div key={m.id} title={`${m.name} — ${m.duration}`}
                   style={{ flex: durations[i], background: modColors[i].accent, opacity: 0.85, borderRadius: 3 }} />
               ))}
             </div>
@@ -40,7 +41,7 @@ export default function SchedulePage() {
               {modules.map((m, i) => (
                 <div key={m.id} style={{ display: "flex", alignItems: "center", gap: 6 }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: modColors[i].accent }} />
-                  <span style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 500 }}>{m.label}: {durations[i]}mo</span>
+                  <span style={{ fontSize: 11, color: "var(--text-muted)", fontWeight: 500 }}>{m.label}: {m.duration}</span>
                 </div>
               ))}
             </div>
@@ -75,7 +76,7 @@ export default function SchedulePage() {
                           <div style={{ fontSize: "clamp(14px,2vw,17px)", fontWeight: 700, color: "var(--text)", letterSpacing: "-0.02em" }}>{m.icon} {m.name}</div>
                         </div>
                         <span style={{ fontSize: 12, fontWeight: 700, color: c.accent, background: c.light, padding: "5px 14px", borderRadius: "var(--radius-md)", flexShrink: 0, border: `1px solid ${c.accent}18` }}>
-                          {durations[i]} months
+                          {m.duration}
                         </span>
                       </div>
                       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
@@ -110,7 +111,7 @@ export default function SchedulePage() {
                 <div className="fade-up" style={{ border: "1px solid var(--hack-border)", borderRadius: "var(--radius-xl)", padding: "20px 24px", background: "var(--hack-bg)" }}>
                   <div style={{ fontSize: 18, fontWeight: 800, color: "var(--hack-text)", marginBottom: 6, letterSpacing: "-0.025em" }}>Graduation 🎓</div>
                   <div style={{ fontSize: 14, color: "var(--hack-icon)", lineHeight: 1.75 }}>
-                    6 modules complete · 6 Hackathon projects in your portfolio · Full-Stack + Agentic AI developer — ready to get hired or start freelancing.
+                    6 modules complete · 6 Hackathon projects in your portfolio · Full-Stack + AI developer — ready to get hired or start freelancing.
                   </div>
                 </div>
               </div>

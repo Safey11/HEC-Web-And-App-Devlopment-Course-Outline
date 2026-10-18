@@ -20,7 +20,7 @@ export default function OutlinePage() {
               From Beginner to<br />Full-Stack + AI Developer
             </h1>
             <p style={{ fontSize: 16, color: "var(--text-muted)", maxWidth: 520, lineHeight: 1.8, letterSpacing: "-0.005em" }}>
-              6 modules built on Sir Ghous Ahmed's battle-tested SMIT curriculum — with Agentic AI added on top. Every module ends with a real Hackathon.
+              6 modules built on Sir Ghous Ahmed's battle-tested SMIT curriculum — with AI Integration added on top. Every module ends with a real Hackathon.
             </p>
             <div style={{ marginTop: 18, display: "inline-flex", alignItems: "center", gap: 7, background: "var(--credit-bg)", border: "1px solid var(--credit-border)", padding: "6px 14px", borderRadius: "var(--radius-md)" }}>
               <Star size={13} color="#f59e0b" fill="#f59e0b" />

@@ -15,13 +15,13 @@ export default function Footer() {
                 <BookOpen size={15} color="#fff" />
               </div>
               <span style={{ fontWeight: 800, fontSize: 14, color: "var(--text)", letterSpacing: "-0.02em" }}>
-                WebCraft <span style={{ color: "var(--accent)" }}>Academy</span>
+                Hafiz Education <span style={{ color: "var(--accent)" }}>Center</span>
               </span>
             </div>
             <p style={{ fontSize: 13, color: "var(--text-muted)", lineHeight: 1.75, marginBottom: 18 }}>
               From zero to Full-Stack + AI Developer. Weekends only. Karachi, Pakistan.
             </p>
-            <a href="https://wa.me/923000000000" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/923092583515" target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "8px 16px", background: "#25D366", color: "#fff", borderRadius: "var(--radius-md)", fontSize: 13, fontWeight: 600, textDecoration: "none", boxShadow: "0 2px 8px rgba(37,211,102,0.3)" }}
               onMouseOver={e => e.currentTarget.style.opacity="0.88"}
               onMouseOut={e => e.currentTarget.style.opacity="1"}>
@@ -48,9 +48,9 @@ export default function Footer() {
             <div style={{ fontSize: 11, fontWeight: 700, color: "var(--text-faint)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 16 }}>Contact</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {[
-                { icon: <Mail size={14}/>, href: "mailto:info@webcraftacademy.pk", label: "info@webcraftacademy.pk", hover: "var(--accent)" },
-                { icon: <MessageCircle size={14}/>, href: "https://wa.me/923000000000", label: "WhatsApp us", hover: "#25D366" },
-                { icon: <GitBranch size={14}/>, href: "https://github.com/webcraftacademy", label: "GitHub", hover: "var(--text)" },
+                { icon: <Mail size={14}/>, href: "mailto:safeysafo@gmail.com", label: "safeysafo@gmail.com", hover: "var(--accent)" },
+                { icon: <MessageCircle size={14}/>, href: "https://wa.me/923092583515", label: "WhatsApp us", hover: "#25D366" },
+                { icon: <GitBranch size={14}/>, href: "https://github.com/Safey11", label: "GitHub", hover: "var(--text)" },
               ].map((c,i) => (
                 <a key={i} href={c.href} target="_blank" rel="noopener noreferrer"
                   style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--text-muted)", textDecoration: "none", fontWeight: 500, transition: "color 0.15s" }}
@@ -70,7 +70,7 @@ export default function Footer() {
                 { label: "Location",       value: "Karachi, Pakistan" },
                 { label: "Schedule",       value: "Sat & Sun only" },
                 { label: "Session length", value: "2–3 hours" },
-                { label: "Starts",         value: "April 5, 2026" },
+                { label: "Fee",            value: "Rs. 1,000 reg. + Rs. 2,000/mo" },
                 { label: "Level",          value: "Complete beginners" },
               ].map((d,i) => (
                 <div key={i} style={{ display: "flex", gap: 8, fontSize: 13 }}>
@@ -84,7 +84,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid var(--border)", paddingTop: 24, display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-          <p style={{ fontSize: 12, color: "var(--text-faint)", fontWeight: 500 }}>© 2026 WebCraft Academy · Karachi, Pakistan</p>
+          <p style={{ fontSize: 12, color: "var(--text-faint)", fontWeight: 500 }}>© 2026 Hafiz Education Center · Karachi, Pakistan</p>
           <div style={{ display: "flex", alignItems: "center", gap: 6, padding: "5px 12px", background: "var(--credit-bg)", border: `1px solid var(--credit-border)`, borderRadius: 99 }}>
             <Star size={11} color="#f59e0b" fill="#f59e0b" />
             <span style={{ fontSize: 11, color: "var(--credit-text)", fontWeight: 600 }}>Core curriculum by Sir Ghous Ahmed · SMIT</span>

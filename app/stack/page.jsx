@@ -26,9 +26,6 @@ const stackDetails = {
   "Socket.IO":      "Real-time bidirectional communication. Build live chat & games.",
   "Redis":          "In-memory caching. Speed up APIs and manage sessions.",
   "Stripe":         "Payment integration. The industry standard in 2026.",
-  "Python":         "Fast-track for AI scripting, LLM APIs, and LangChain.",
-  "LangChain":      "Framework for LLM-powered apps. Chains, tools, memory.",
-  "LangGraph":      "Multi-agent orchestration. Build stateful AI agent workflows.",
   "Groq API":       "Ultra-fast LLM inference. Build real-time AI features.",
   "OpenAI API":     "GPT-4o integration. Industry-standard LLM API worldwide.",
   "React Native":   "Build iOS & Android apps with your React knowledge.",
@@ -93,12 +90,12 @@ export default function StackPage() {
 
           {/* MERN + AI banner */}
           <div className="fade-up" style={{ background: "#0f172a", border: "1px solid #1e293b", borderRadius: "var(--radius-2xl)", padding: "clamp(28px,4vw,40px)", boxShadow: "0 16px 48px rgba(15,23,42,0.18)" }}>
-            <h2 style={{ fontSize: "clamp(20px,3vw,26px)", fontWeight: 800, color: "#f1f5f9", letterSpacing: "-0.03em", marginBottom: 10 }}>MERN + Agentic AI Stack</h2>
+            <h2 style={{ fontSize: "clamp(20px,3vw,26px)", fontWeight: 800, color: "#f1f5f9", letterSpacing: "-0.03em", marginBottom: 10 }}>MERN + AI Integration Stack</h2>
             <p style={{ fontSize: 14, color: "#64748b", lineHeight: 1.85, marginBottom: 24, maxWidth: 580 }}>
               The most in-demand combination for Pakistani freelancers and remote developers in 2026. Full-stack MERN skills with AI integration capability — no other bootcamp in Karachi teaches this.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {["MongoDB","Express","React","Node.js","LangChain","LangGraph"].map((t,i) => (
+              {["MongoDB","Express","React","Node.js","Groq API","OpenAI API"].map((t,i) => (
                 <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, padding: "9px 16px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "var(--radius-md)", fontSize: 13, fontWeight: 700, color: "#f1f5f9" }}>
                   <CheckCircle2 size={13} color="#4ade80" />
                   {t}
